@@ -38,10 +38,10 @@
                 console.log(loc);
                 if (!loc)
                     alert("must be referred from a github repo");
-                else if (loc.includes("github.com/Cohu-Inc"))
-                    alert(
-                        "Please do not deploy directly from the Cohu repository"
-                    );
+                // else if (loc.includes("github.com/Cohu-Inc"))
+                //     alert(
+                //         "Please do not deploy directly from the Cohu repository"
+                //     );
                 else {
                     deployPath += loc.substring(
                         0,
