@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <meta name="author" content="" />
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+
+    <body>
+        <div id="logo">
+            <img src="../assets/Cohu-Logo.png" />
+        </div>
+        <div id="body">
+            Before clicking the deploy to amplify console button, please make
+            sure
+            <ul>
+                <li>
+                    You are deploying from a forked copy of the
+                    unison_encryption repository.
+                </li>
+                <li>You are currently logged into your AWS account.</li>
+            </ul>
+            <br />
+            <button type="button" id="deploy" onclick="myFunction()">
+                <img
+                    src="https://oneclick.amplifyapp.com/button.svg"
+                    alt="Deploy to Amplify Console"
+                />
+            </button>
+        </div>
+        <script>
+            function myFunction() {
+                deployPath =
+                    "https://console.aws.amazon.com/amplify/home#/deploy?repo=";
+                loc = window.location.href;
+                loc =
+                    "https://github.com/Cohu-Inc/unison_encryption/tree/development/images/deploy_to_amplify.html";
+                if (loc.includes("github.com/Cohu-Inc"))
+                    alert(
+                        "Please do not deploy directly from the Cohu repository"
+                    );
+                else {
+                    deployPath += loc.substring(
+                        0,
+                        loc.indexOf("images/deploy_to_amplify.html")
+                    );
+                    location = deployPath;
+                }
+            }
+        </script>
+
+        <style>
+
+            #body,#logo {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            #logo {
+                margin-bottom: 20px;
+            }
+            button {
+                border-width: 0;
+                border-color: inherit;
+                background: inherit;
+            }
+        </style>
+    </body>
+</html>
