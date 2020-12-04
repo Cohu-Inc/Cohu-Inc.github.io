@@ -34,10 +34,11 @@
             function myFunction() {
                 deployPath =
                     "https://console.aws.amazon.com/amplify/home#/deploy?repo=";
-                loc = window.location.href;
-                loc =
-                    "https://github.com/Cohu-Inc/unison_encryption/tree/development/images/deploy_to_amplify.html";
-                if (loc.includes("github.com/Cohu-Inc"))
+                loc = Document.referrer;
+                console.log(loc);
+                if (!loc)
+                    alert("must be referred from a github repo");
+                else if (loc.includes("github.com/Cohu-Inc"))
                     alert(
                         "Please do not deploy directly from the Cohu repository"
                     );
