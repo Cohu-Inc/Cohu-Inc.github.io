@@ -23,6 +23,8 @@
                 <li>You are currently logged into your AWS account.</li>
             </ul>
             <br />
+            <label for="repo">Enter the URL of your GitHub repository</label>
+            <input id="repo"></input>
             <button type="button" id="deploy" onclick="myFunction()">
                 <img
                     src="https://oneclick.amplifyapp.com/button.svg"
@@ -34,7 +36,7 @@
             function myFunction() {
                 deployPath =
                     "https://console.aws.amazon.com/amplify/home#/deploy?repo=";
-                loc = Document.referrer;
+                loc = document.getElementById('repo').value
                 console.log(loc);
                 if (!loc)
                     alert("must be referred from a github repo");
