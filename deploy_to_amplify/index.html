@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title></title>
+        <title>Unison encryption server deploy to AWS Amplify</title>
         <meta name="author" content="" />
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,54 +18,68 @@
             <ul>
                 <li>
                     You are deploying from a forked copy of the
-                    unison_encryption repository.
+                    Cohu-Inc/unison_encryption repository.
                 </li>
-                <li>You are currently logged into your AWS account.</li>
+                <li>You have a valid AWS account.</li>
             </ul>
             <br />
-            <label for="repo">Enter the URL of your GitHub repository</label>
-            <input id="repo"></input>
-            <button type="button" id="deploy" onclick="myFunction()">
-                <img
-                    src="https://oneclick.amplifyapp.com/button.svg"
-                    alt="Deploy to Amplify Console"
-                />
-            </button>
+            <div id="centeredStuff">
+                <label for="repo">Enter the URL of your GitHub repository</label>
+                <input id="repo"></input>
+                <button type="button" id="deploy" onclick="myFunction()">
+                    <img
+                        src="https://oneclick.amplifyapp.com/button.svg"
+                        alt="Deploy to Amplify Console"
+                    />
+                </button>
+                </div>
         </div>
         <script>
             function myFunction() {
                 deployPath =
                     "https://console.aws.amazon.com/amplify/home#/deploy?repo=";
                 loc = document.getElementById('repo').value
-                console.log(loc);
                 if (!loc)
-                    alert("must be referred from a github repo");
+                    alert("must enter a valid github repository");
                 // else if (loc.includes("github.com/Cohu-Inc"))
                 //     alert(
                 //         "Please do not deploy directly from the Cohu repository"
                 //     );
                 else {
                     deployPath += loc;
-                    console.log(deployPath);
-                    // location = deployPath;
+                    location = deployPath;
                 }
             }
         </script>
 
         <style>
-
-            #body,#logo {
+            body {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                width: 80%;
             }
             #logo {
-                margin-bottom: 20px;
+                margin-bottom: 1rem;
             }
             button {
                 border-width: 0;
                 border-color: inherit;
                 background: inherit;
+            }
+            #centeredStuff {
+                margin-top: .5rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            #centeredStuff input {
+                margin-top: .5rem;
+                margin-bottom: 1.5rem;
+                width: 100%;
+            }
+            label {
+                align-self: flex-start;
             }
         </style>
     </body>
