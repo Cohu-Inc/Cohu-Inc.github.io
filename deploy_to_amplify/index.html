@@ -45,11 +45,9 @@
                 //         "Please do not deploy directly from the Cohu repository"
                 //     );
                 else {
-                    deployPath += loc.substring(
-                        0,
-                        loc.indexOf("images/deploy_to_amplify.html")
-                    );
-                    location = deployPath;
+                    deployPath += loc;
+                    console.log(deployPath);
+                    // location = deployPath;
                 }
             }
         </script>
