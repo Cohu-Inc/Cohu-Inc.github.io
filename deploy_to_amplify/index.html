@@ -41,10 +41,10 @@
                 loc = document.getElementById('repo').value
                 if (!loc)
                     alert("must enter a valid github repository");
-                // else if (loc.includes("github.com/Cohu-Inc"))
-                //     alert(
-                //         "Please do not deploy directly from the Cohu repository"
-                //     );
+                else if (loc.includes("github.com/Cohu-Inc"))
+                    alert(
+                        "Please do not deploy directly from the Cohu repository"
+                    );
                 else {
                     deployPath += loc;
                     location = deployPath;
